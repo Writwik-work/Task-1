@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Fitness Quiz</title>
+    <link rel="stylesheet" href="stylee.css" />
+  </head>
+  <body>
+    <div class="fitness-bg">
+      <section class="hero-section">
+          <div class="content">
+              <h1>Achieve Your Dream Figure with Quick and Effective Workouts.</h1>
+              <p>Take this 30-second quiz to find out how</p>
+              <div class="radio-group">
+                <!-- WOMEN OPTION -->
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="female" />
+                  <span class="radio-custom"></span>
+                  <span class="symbol">&#9792;</span>
+                  <span class="label-text">Women Start Here</span>
+                </label>
+            
+                <!-- MEN OPTION -->
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="male" />
+                  <span class="radio-custom"></span>
+                  <span class="symbol">&#9794;</span>
+                  <span class="label-text">Men Start Here</span>
+                </label>
+              </div>
+              <div class="logos">
+                  <img src="/img/WH Logo.png" alt="Women's Health">
+                  <img src="/img/Vector.png" alt="Forbes">
+                  <img src="/img/Mayo-clinic.png" alt="Mayo Clinic">
+                  <img src="/img/The-Wall-Street-Journal-Logo-2 1.png" alt="The Wall Street Journal">
+                  <img src="/img/vogue.png" alt="Vogue">
+              </div>
+          </div>
+          <div class="image-container">
+              <img src="/img/Fit Girl.png" alt="Fit Woman" class="hero-image">
+          </div>
+      </section>
+  </div>
+
+    <!-- Quiz Section (initially hidden) -->
+    <section class="quiz-container" id="quiz-section" style="display: none">
+      <div class="quiz-header">
+        <button class="back-to-main" onclick="backToMain()">
+          ← Back to Main Screen
+        </button>
+        <!-- Progress bar container -->
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Question display area -->
+      <div class="question-content">
+        <h2 id="question-title">Question Title</h2>
+        <p class="subtext" id="question-subtext">Subtext here</p>
+
+        <!-- Radio options go here -->
+        <div class="options-container" id="options-container">
+          <!-- Dynamically injected radio options -->
+        </div>
+      </div>
+
+      <!-- Navigation / Pagination -->
+      <div class="quiz-footer">
+        <button class="prev-btn" id="prev-btn" onclick="prevQuestion()">
+          ←
+        </button>
+        <div class="question-counter" id="question-counter">1/1</div>
+        <button class="next-btn" id="next-btn" onclick="nextQuestion()">
+          →
+        </button>
+        <!-- The submit button will replace the next arrow for the last question -->
+      </div>
+    </section>
+
+    <!-- Loading Screen (initially hidden) -->
+    <section id="loading-screen" style="display: none" class="loading-screen">
+      <h1>Achieve Your Dream Figure with Quick and Effective Workouts.</h1>
+      <p>
+        Please wait while we match you with the best routine for maximum fat
+        loss...
+      </p>
+
+      <div class="circle-wrapper">
+        <!-- Simple SVG Circle -->
+        <svg class="progress-ring" width="120" height="120">
+          <circle
+            class="progress-ring__circle"
+            stroke="#8143e2"
+            stroke-width="10"
+            fill="transparent"
+            r="52"
+            cx="60"
+            cy="60"
+          />
+        </svg>
+        <!-- Percentage text in the center -->
+        <div class="progress-percentage" id="progress-percentage">0%</div>
+      </div>
+    </section>
+
+    <!-- Results/Presentation Section (initially hidden) -->
+    <section id="results-screen" style="display: none" class="results-screen">
+      <div class="results-container">
+        <h1>Achieve Your Dream Figure with Quick and Effective Workouts.</h1>
+        <h2>Great News</h2>
+        <p>
+          Your ideal fat burning routine has been calculated!<br /><br />
+          Based on your answers, it seems one simple method may be all it takes
+          to help you see maximum results in minimal time—without endless hours
+          of cardio or restrictive diets.<br /><br />
+          Instead, this “S.I.T.” routine can be done from the comfort of home in
+          just 2 minutes, helping your body burn more fat faster.<br /><br />
+          But here’s the kicker: these hyper-focused movements have the
+          potential to burn multiple times more fat than traditional exercise.
+          In the following presentation, discover the exact approach to
+          transform your fitness journey—backed by science.<br /><br />
+          We think you’ll absolutely <strong>love</strong> it!
+        </p>
+
+        <button class="presentation-btn" onclick="backToMain()">
+          Watch Presentation Now
+        </button>
+      </div>
+    </section>
+
+    <script src="scriptt.js"></script>
+  </body>
+</html>

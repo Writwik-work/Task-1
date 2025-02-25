@@ -1,0 +1,582 @@
+@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+.fitness-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: linear-gradient(to right, #fce3dd, #e7c4f2);
+}
+.hero-section {
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  height: 615px;
+  /* margin-top: 5%; */
+  /* padding: 0px 7%; */
+}
+.content {
+  max-width: 51%;
+}
+h1 {
+  font-weight: 500;
+  font-size: 61px;
+  line-height: 88.8px;
+  color: #000000;
+  margin-bottom: 35px;
+}
+p {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45.6px;
+  margin-bottom: 30px;
+}
+.radio-group {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 24px; /* spacing between the two options */
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  color: #000;
+  border: 1px;
+  padding: 24px 48px 24px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+/* Hover effect (optional) */
+.radio-option:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hide the native radio input */
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+/* The custom radio circle */
+.radio-custom {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #1e1e1e;
+  border-radius: 50%;
+  margin-right: 76px;
+  flex-shrink: 0; /* ensure it doesn’t shrink in smaller spaces */
+}
+
+/* When the radio is checked, fill the circle */
+/* .radio-option input[type=radio]:checked + .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+} */
+
+/* The symbol (♀ / ♂) */
+.symbol {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* The label text */
+.label-text {
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.logos {
+  position: relative;
+  margin-top: 120px;
+  width: 1450px;
+  /* flex-wrap: wrap; */
+  gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* margin-left: 143px; */
+  padding-right: 160px;
+  padding-left: 160px;
+  z-index: 1;
+}
+.logos img {
+  height: 30px;
+}
+.image-container {
+  /* Default to normal flow; we'll use a media query for large screens. */
+  position: static;
+  width: auto;
+  height: auto;
+  /* small spacing from the content on smaller screens */
+}
+
+.hero-image {
+  position: relative;
+  bottom: 60px;
+  width: 100%;
+  max-width: 710px;
+  height: 685px;
+  /* display: block; */
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1600px) {
+  /* For very large screens, match the Figma offsets/dimensions you provided */
+  .hero-section {
+    /* Make the hero-section wide enough so that absolutely positioning
+       the image won’t cause it to overlap the text for large displays. */
+    width: 2200px;
+  }
+  .image-wrapper {
+    position: absolute;
+    top: 30px;
+    left: 570px;
+    width: 1575.3938px;
+    height: 1050px;
+    margin-top: 0; /* remove margin-top since it's now absolute */
+    overflow: hidden;
+  }
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or contain, depending on your preference */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content {
+    max-width: 100%;
+  }
+  .buttons {
+    justify-content: center;
+  }
+  .logos {
+    justify-content: center;
+  }
+  .image-container {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 16px;
+  }
+  button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .logos img {
+    height: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .fitness-bg {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+  }
+  button {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .logos img {
+    height: 20px;
+  }
+}
+
+/*
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 7%;
+  background: linear-gradient(90deg, #ffe3e3 0%, #dfd3ff 100%);
+  max-width: 1920px;
+  width: 100%;
+  height: 855px;
+  position: relative;
+}
+
+
+.hero-content {
+  position: absolute;
+  top: 135px;
+  max-width: 1080px;
+  padding: 4px;
+ 
+}
+
+.hero-content h1 {
+  width: 790px;
+
+  font-weight: 500;
+  font-size: 74px;
+  line-height: 88.8px;
+  color: #000000;
+  margin-bottom: 35px;
+}
+
+.hero-content p {
+  max-width: 393px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 45.6px;
+  margin-bottom: 30px;
+}
+
+
+.btn-group {
+  max-width: 834px;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+  position: relative;
+  top: 25px;
+}
+
+.btn {
+  background: #fff;
+  color: #000;
+  padding: 24px 48px 24px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+span {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #f5c1e0;
+  border-color: #f36fa1;
+}
+
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+.logos img {
+  height: 40px;
+  object-fit: contain;
+}
+
+
+.hero-image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+
+.hero-image img {
+  max-height: 800px;
+  width: auto;
+} */
+
+/* ---------- Quiz Section ---------- */
+.quiz-container {
+  max-width: 834px;
+  margin: 0 auto;
+  height: 698px;
+  border-radius: 32px;
+  padding: 40px 52px 24px 52px;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px 0px #0000001a;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.back-to-main {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #f36fa1;
+  cursor: pointer;
+}
+
+.back-to-main:hover {
+  text-decoration: underline;
+}
+
+/* Progress bar */
+.progress-bar {
+  flex: 1;
+  height: 10px;
+  background: #d9d9d9;
+  margin-left: 20px;
+  position: relative;
+  /* width: 730px; */
+  height: 24px;
+  border-radius: 8px;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #e9639f 0%, #8143e2 100%);
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+/* Question Content */
+.question-content {
+  margin-bottom: 30px;
+}
+
+.question-content h2 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33.6px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Options */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  width: 730px;
+  height: 280px;
+  gap: 20px;
+  padding-right: 74px;
+  padding-bottom: 24px;
+  padding-left: 74px;
+}
+
+.option-item {
+  height: 72px;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 24px 40px 24px 24px;
+  border: 1px solid #a6a6a6;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.option-item input[type="radio"] {
+  cursor: pointer;
+  accent-color: #e9639f;
+}
+/* When an option is selected, give it a pink background & white text (adjust colors as desired) */
+.option-item.selected {
+  background-color: #e9639f; /* or whichever pink shade matches your image */
+  border-color: #e9639f;
+  color: #fff;
+}
+
+.option-label {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* Quiz Footer */
+.quiz-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prev-btn,
+.next-btn {
+  background: #f36fa1;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: #ec5f93;
+}
+
+.question-counter {
+  font-size: 1rem;
+  color: #333;
+}
+
+.submit-btn {
+  background: #f36fa1;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.submit-btn:hover {
+  background: #ec5f93;
+}
+
+/* Loading screen covers the viewport with a similar gradient background */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* or match your site layout */
+  background: linear-gradient(90deg, #ffe3e3 0%, #dfd3ff 100%);
+  text-align: center;
+}
+
+/* Wrapper to position the percentage text over the circle */
+.circle-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+}
+
+/* Rotate the entire SVG so 0% starts at top */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+/* The circle itself, which we animate via stroke-dashoffset */
+.progress-ring__circle {
+  transition: 0.3s stroke-dashoffset;
+  transform-origin: 50% 50%;
+}
+
+/* Centered text showing XX% */
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8143e2; /* match your desired color */
+}
+
+/* Results (Presentation) Screen */
+.results-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* or adjust if you want a shorter container */
+  background: linear-gradient(90deg, #ffe3e3 0%, #dfd3ff 100%);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.results-container {
+  background: #ffffff;
+  max-width: 700px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0px 4px 20px 0px #0000001a;
+  text-align: center;
+}
+
+.results-container h1 {
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 45.6px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.results-container h2 {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 45.6px;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #1e1e1e;
+}
+
+.results-container p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.presentation-btn {
+  background: linear-gradient(90deg, #e9639f 0%, #8143e2 100%);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 620px;
+  border-radius: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33.6px;
+  text-align: center;
+}
+
+.presentation-btn:hover {
+  opacity: 0.9;
+}
